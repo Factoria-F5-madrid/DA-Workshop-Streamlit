@@ -1,0 +1,68 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
+
+# Modelos y datos serializados (comentado para proyecto educativo)
+# *.pkl
+# *.pickle
+# *.joblib
+# *.h5
+# *.hdf5
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# Archivos de datos grandes
+*.csv
+*.xlsx
+*.json
+*.parquet
+!datos_prueba.csv
+!target_prueba.csv
+
+# Logs y caché
+*.log
+.cache/
+*.sqlite
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+
+# Distribución / empaquetado
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
