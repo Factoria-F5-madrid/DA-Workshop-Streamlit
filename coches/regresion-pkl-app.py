@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from pathlib import Path
+
+# Rutas ancladas al directorio del script (independiente del CWD de streamlit run).
+BASE_DIR = Path(__file__).resolve().parent
 
 st.title('Predicción de Precios de Vehículos')
 
@@ -30,17 +34,18 @@ class PostProcesador:
     def round_post(self, y):
         return np.round(y).astype(int)
 
+
 # --- CARGA DEL MODELO Y POSTPROCESADOR ---
 
 try:
-    pipeline = joblib.load('modelo_regresion.pkl')
+    pipeline = joblib.load(BASE_DIR / 'modelo_regresion.pkl')
     st.success("Modelo cargado correctamente")
 except Exception as e:
     st.error(f"Error al cargar el modelo: {e}")
     st.stop()
 
 try:
-    post = joblib.load('post.pkl')
+    post = joblib.load(BASE_DIR / 'post.pkl')
     st.success("Postprocesador cargado correctamente")
 except Exception as e:
     st.error(f"Error al cargar el postprocesador: {e}")
